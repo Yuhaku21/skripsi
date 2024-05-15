@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rekomendasi Wisata</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><b>Wisata<span style="color: purple">Loteng</span></b></a
+        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="informasiwisata.html">Informasi Wisata</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Rekomendasi</a>
+            </li>
+            <div class="spacer" style="margin-right: 30px"></div>
+            <li class="nav-item">
+              <a class="btn btn-success" href="#">Daftar</a>
+            </li>
+            <div class="spacer" style="margin-right: 10px; margin-top: 10px"></div>
+            <li class="nav-item">
+              <a class="btn btn-outline-success" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar-->
+
+    <!--Section Rekomendasi Wisata-->
+    <div class="container mt-4 mb-5">
+      <div class="row">
+        <div class="col">
+          <div class="card shadow" style="width: 80%">
+            <div class="card-body">
+              <!--Benefit-->
+              <div class="mb-3">
+                <label for="inputKeindahan" class="form-label"><b>Seberapa bagus tempat wisata yang kamu inginkan ?</b></label>
+                <select id="inputKeindahan" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="5">Sangat Menarik</option>
+                  <option value="4">Menarik</option>
+                  <option value="3">Cukup Menarik</option>
+                  <option value="2">Tidak Menarik</option>
+                  <option value="1">Sangat Tidak Menarik</option>
+                </select>
+              </div>
+              <!--Benefit-->
+              <div class="mb-3">
+                <label for="inputKebersihan" class="form-label"><b>Seberapa kebersihan tempat wisata yang kamu inginkan ?</b></label>
+                <select id="inputKebersihan" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="5">Sangat Bersih</option>
+                  <option value="4">Bersih</option>
+                  <option value="3">Cukup Bersih</option>
+                  <option value="2">Tidak Bersih</option>
+                  <option value="1">Sangat Tidak Bersih</option>
+                </select>
+              </div>
+              <!--Benefit-->
+              <div class="mb-3">
+                <label for="inputFasilitas" class="form-label"><b>Seberapa banyak fasilitas yang disediakan oleh tempat wisata yang kamu inginkan ?</b></label>
+                <select id="inputFasilitas" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="5">Sangat Banyak</option>
+                  <option value="4">Banyak</option>
+                  <option value="3">Cukup Banyak</option>
+                  <option value="2">Sedikit</option>
+                  <option value="1">Sangat Sedikit</option>
+                </select>
+              </div>
+              <!--Cost-->
+              <div class="mb-3">
+                <label for="inputCostBudget" class="form-label"><b>Berapa budget tempat wisata yang kamu inginkan ?</b></label>
+                <select id="inputCostBudget" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">Sangat Murah (1000 - 2000)</option>
+                  <option value="2">Murah (3000 - 4000)</option>
+                  <option value="3">Cukup Murah (5000 - 6000)</option>
+                  <option value="4">Mahal (7000 - 8000)</option>
+                  <option value="5">Sangat Mahal (9000 >)</option>
+                </select>
+              </div>
+              <!--Cost-->
+              <div class="mb-3">
+                <label for="inputCostJarak" class="form-label"><b>Seberapa jauh jarak tempuh untuk tempat wisata yang kamu inginkan ?</b></label>
+                <select id="inputCostJarak" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">Sangat Dekat</option>
+                  <option value="2">Dekat</option>
+                  <option value="3">Cukup Dekat</option>
+                  <option value="4">Jauh</option>
+                  <option value="5">Sangat Jauh</option>
+                </select>
+              </div>
+              <!--Benefit-->
+              <div class="mb-3">
+                <label for="inputKeamanan" class="form-label"><b>Seberapa tinggi keamanan tempat wisata yang kamu inginkan ?</b></label>
+                <select id="inputKeamanan" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="5">Sangat Aman</option>
+                  <option value="4">Aman</option>
+                  <option value="3">Cukup Aman</option>
+                  <option value="2">Tidak Aman</option>
+                  <option value="1">Sangat Tidak Aman</option>
+                </select>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-dark" type="button" onclick="tampilkanHasil()">Mulai Cari Tempat Wisata</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div id="map" class="map shadow" style="width: 500px; height: 300px; border-radius: 10px"></div>
+          <h5 class="mt-4"><b>Ini Dia Hasil Rekomendasi Wisata yang Cocok Buat Kamu</b></h5>
+          <h3 id="hasilGabungan"></h3>
+          <a href="index.html" class="btn btn-dark mt-4">Kembali ke Beranda</a>
+        </div>
+      </div>
+    </div>
+    <!--Section Rekomendasi Wisata-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="peta.js"></script>
+    <script src="ranking.js"></script>
+  </body>
+</html>
